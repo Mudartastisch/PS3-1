@@ -85,6 +85,34 @@ TEST_CASE("describe_factorial", "[factorial]") {
   REQUIRE(factorial(20) == 2432902008176640000);//https://en.wikipedia.org/wiki/Factorial
 }
 
+
+bool isPrime(int s) {
+	if (s == 2 || s == 1) { //catch most simple cases
+		return true;
+	}
+	if (s % 2 == 0) { //ignore all even numbers
+		return false;
+	}
+	for (int i = 3; i*i <= s; i = i + 2) { //increment odd numbers 
+		if (s%i == 0) { 
+			return false; //break out if an odd number modulo is 0
+		}
+	}
+	return true; //if the runner reaches the number without it, it must be a prime
+}
+
+TEST_CASE("describe_is_prime", "[is_prime]") {
+  REQUIRE(isPrime(1) == true);
+	REQUIRE(isPrime(2) == true);
+	REQUIRE(isPrime(3) == true);
+	REQUIRE(isPrime(4) == false);
+	REQUIRE(isPrime(7) == true);
+	REQUIRE(isPrime(42) == false);
+  REQUIRE(isPrime(7829) == true); //https://en.wikipedia.org/wiki/List_of_prime_numbers#The_first_1000_prime_numbers
+}
+
+
+
 int main(int argc, char* argv[])
 {
   return Catch::Session().run(argc, argv);
