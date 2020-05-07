@@ -38,6 +38,21 @@ TEST_CASE("describe_checkSum", "[checkSum]") {
 }
 
 
+double fract(double d){
+  if( d > 0){
+    return (d - floor(d)); //subtract next lower int from double
+  }
+  else{
+    return (d - ceil(d)); //add next higher int to double (mathematical -x -y)
+  }
+}
+
+TEST_CASE("describe_fract", "[fract]") {
+  REQUIRE(fract(5.134) == Approx(0.134));
+  REQUIRE(fract(-5.134) == Approx(-0.134));
+}
+
+
 
 int main(int argc, char* argv[])
 {
