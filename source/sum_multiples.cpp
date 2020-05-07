@@ -34,4 +34,6 @@ int main(int argc, char **argv)
         exit(EXIT_FAILURE);
     }
     //http://www.cplusplus.com/reference/cstdlib/exit/
+
+    return 0;
 }

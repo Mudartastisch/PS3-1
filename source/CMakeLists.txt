@@ -6,5 +6,6 @@ add_executable(tests tests.cpp)
 add_executable(sum-m sum_multiples.cpp)
 
 add_executable(lcm lcm.cpp)
-# Kommentieren Sie die folgenden Zeilen fuer die Aufgabe `mile_to_kilometer` aus
-#add_executable(mile_to_kilometer mile_to_kilometer.cpp)
+
+add_executable(mile_to_kilometer mile_to_kilometer.cpp)
+add_executable(interactive_mile_to_kilometer interactive_mile_to_kilometer.cpp)

@@ -9,10 +9,14 @@
 //we can assume a big numer
 long simple_lcm = 1;
 
-int main() {
-    for(int i = 1; i <= 20; i++){
+int main()
+{
+    for (int i = 1; i <= 20; i++)
+    {
         simple_lcm = simple_lcm * i;
     }
 
     std::cout << simple_lcm << "\n";
+
+    return 0;
 }
