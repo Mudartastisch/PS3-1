@@ -70,6 +70,21 @@ TEST_CASE("describe_cylinder_area", "[cylinder_area]") {
   REQUIRE(cylinder_area(3,7) == Approx(188.496));
 }
 
+
+
+long factorial(int i) { //this might get big very soon
+  if (i == 0 || i < 0) return 0;
+	if (i == 1) return 1;
+	else return i*(factorial(i - 1)); //recursive multiplication
+}
+
+TEST_CASE("describe_factorial", "[factorial]") {
+  REQUIRE(factorial(1) == 1);
+	REQUIRE(factorial(2) == 2);
+  REQUIRE(factorial(3) == 6);
+  REQUIRE(factorial(20) == 2432902008176640000);//https://en.wikipedia.org/wiki/Factorial
+}
+
 int main(int argc, char* argv[])
 {
   return Catch::Session().run(argc, argv);
